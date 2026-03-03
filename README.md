@@ -8,7 +8,7 @@ Rather than forecasting fixed churn values, the objective is to model potential 
 - This project transitions from descriptive churn analysis to a forward-looking price risk simulation framework.
 - Rather than forecasting fixed churn values, the objective is to model potential inflection conditions under hypothetical price adjustment scenarios by integrating macroeconomic signals, behavioral segmentation, and market sentiment.
 
-** Macro-Economic Sensitivity (The “Golden Cross” Signal) ✔️ Validated** 
+**Macro-Economic Pressure X Premium Tier Sensitivity - Validated** 
 
 - Research: Customer churn risk is not solely a function of price, but may intensify when CPI (Consumer Price Index) growth outpaces the relative growth of service costs—indicating pressure on real disposable income
 - Objective: To identify structural inflection conditions where macroeconomic pressure could amplify price sensitivity, serving as a key external risk input for the simulator
