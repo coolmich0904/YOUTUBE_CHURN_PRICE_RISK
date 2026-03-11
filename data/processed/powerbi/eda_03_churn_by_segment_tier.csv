@@ -1,0 +1,19 @@
+Segment,PriceTier,Segment_Type,Churn_Rate
+Fresh (<3mo),Low,Family,46.05263157894737
+Fresh (<3mo),Low,Individual,43.49593495934959
+Fresh (<3mo),Medium,Family,63.1578947368421
+Fresh (<3mo),Medium,Individual,75.12437810945273
+Fresh (<3mo),High,Family,83.33333333333334
+Fresh (<3mo),High,Individual,87.8048780487805
+Inflection (3-5mo),Low,Family,25.53191489361702
+Inflection (3-5mo),Low,Individual,36.708860759493675
+Inflection (3-5mo),Medium,Family,62.857142857142854
+Inflection (3-5mo),Medium,Individual,50.588235294117645
+Inflection (3-5mo),High,Family,87.5
+Inflection (3-5mo),High,Individual,62.857142857142854
+Pre-Inflection (5mo+),Low,Family,6.557377049180328
+Pre-Inflection (5mo+),Low,Individual,11.033274956217163
+Pre-Inflection (5mo+),Medium,Family,16.769420468557335
+Pre-Inflection (5mo+),Medium,Individual,23.322683706070286
+Pre-Inflection (5mo+),High,Family,24.06367041198502
+Pre-Inflection (5mo+),High,Individual,40.253565768621236

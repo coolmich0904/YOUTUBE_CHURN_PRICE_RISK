@@ -1,0 +1,10 @@
+Segment,Price_tier,No,Yes
+Fresh (<3mo),Low,56.7,43.3
+Fresh (<3mo),Medium,27.63,72.37
+Fresh (<3mo),High,13.33,86.67
+Inflection (3-5mo),Low,67.46,32.54
+Inflection (3-5mo),Medium,44.26,55.74
+Inflection (3-5mo),High,30.19,69.81
+Pre-Inflection (5+mo),Low,91.14,8.86
+Pre-Inflection (5+mo),Medium,79.89,20.11
+Pre-Inflection (5+mo),High,69.4,30.6
