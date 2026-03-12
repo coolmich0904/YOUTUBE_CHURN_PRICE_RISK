@@ -51,7 +51,7 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 - Monthly churn rose from 6.29 → 36.65 after the policy announcement.
 
 <p align="center">
-  <img src="outputs/eda_01/time_series_churn.png" width=70%>
+  <img src="outputs/eda_01/time_series_churn.png">
 </p>
 
 ### Chart 2: Family vs Individual Churn Gap
@@ -59,10 +59,12 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 - Individual: 24.6% churn, 32-month median tenure
 
 <p align="center">
-  <img src="outputs/eda_02/graph3_tenure_boxplot.png" width=70%>
+  <img src="outputs/eda_02/graph3_tenure_boxplot.png">
 </p>
 
-### Chart 3: Price Elasticity Curve with Threshold
+### Chart 3: Price Scenario Simulation Results
+- 17% price increase = optimal point (highest revenue efficiency with stable churn)
+- Churn spike occurs from 28% and above
 - Inflection point at $75 tier (non-linear acceleration)
 - Simulation scenarios overlay:     
     - +5%: 16.37 Rev Index
@@ -71,7 +73,7 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
     - +28%: 19.55 Rev Index (threshold risk)
 
 <p align="center">
-  <img src="outputs/eda_03/graph2_line_chart.png" width=70%>
+  <img src="outputs/eda_03/graph4_simulation_dual.png">
 </p>
 
 ## Method Overview
@@ -105,3 +107,14 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 - Observation window: Jan 2025 – Jan 2026
 
 **6. Full proxy validation:** /report/data_proxy_validation.md
+
+## Tech Stack
+- Python (Pandas, NumPy, SciPy)
+- Visualization: Matplotlib, Seaborn
+- Environment: Jupyter Notebook, VS Code
+- Version Control: GitHub
+- Dashboard: Power BI
+
+## Strategic Implementation & Next Steps
+
+## 
