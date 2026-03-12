@@ -1,24 +1,107 @@
 # Title: YouTube Churn Price Risk Assessment
+- Dashboard Images (updating)
 
-_This project transitions from descriptive churn analysis to a forward-looking price risk simulation framework.
-Rather than forecasting fixed churn values, the objective is to model potential inflection conditions under hypothetical price adjustment scenarios by integrating macroeconomic signals, behavioral segmentation, and market sentiment._
+## Executive Summary
+Executive Summary
+In September 2025, YouTube announced a Family Plan policy change (implemented October 1) that immediately triggered elevated customer churn. This project investigates whether the churn surge represents a valid market signal about customer segmentation and price elasticity in the remaining customer base, and determines whether a 2026 price increase is viable.
 
-## 1. Research : Scenario-Based Price Risk Assessment Framework
+### Finding
+- The analysis suggests that a price increase of about **+17%** could be viable based on three observed patterns in churn behavior.
+- Family plan subscribers show lower churn than individual users (16.3% vs 24.6%, χ² = 52.97, p < 0.001)
 
-- This project transitions from descriptive churn analysis to a forward-looking price risk simulation framework.
-- Rather than forecasting fixed churn values, the objective is to model potential inflection conditions under hypothetical price adjustment scenarios by integrating macroeconomic signals, behavioral segmentation, and market sentiment.
+<p align="center">
+  <img src="outputs/eda_03/graph1_grouped_bar.png">
+</p>
 
-**Macro-Economic Pressure X Premium Tier Sensitivity - Validated** 
+## Key Insights Summary
+<table align="center">
+  <thead>
+    <tr>
+      <th>Insight</th>
+      <th>Evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Policy change caused abnormal churn</td>
+      <td>6.29 → 36.65 churn/month</td>
+    </tr>
+    <tr>
+      <td>Family users are structurally more resilient</td>
+      <td>16.3% vs 24.6% churn</td>
+    </tr>
+    <tr>
+      <td>Price elasticity threshold occurs near $75</td>
+      <td>Churn accelerates beyond this point</td>
+    </tr>
+  </tbody>
+</table>
 
-- Research: Customer churn risk is not solely a function of price, but may intensify when CPI (Consumer Price Index) growth outpaces the relative growth of service costs—indicating pressure on real disposable income
-- Objective: To identify structural inflection conditions where macroeconomic pressure could amplify price sensitivity, serving as a key external risk input for the simulator
+<table align="center" border="0">
+  <tr>
+    <td><img src="outputs/eda_02/graph2_waffle.png" ></td>
+    <td><img src="outputs/eda_03/graph2_line_chart.png"></td>
+    <td><img src="outputs/eda_03/graph1_grouped_bar.png" ></td>
+  </tr>
+</table>
 
-** Behavioral Resilience of Controversy Survivors ❓ Processing**
+## Key Visualization
+### Chart 1: Time -Series Churn with Policy Inflection
+- Policy change triggered a sharp churn increase.
+- Monthly churn rose from 6.29 → 36.65 after the policy announcement.
 
-- Research: Customer segments that remained active during the Q3 2025 Family Plan policy shift may demonstrate structurally different sensitivity patterns compared to newer or single-user segments
-- Objective: To assign differentiated resilience weights to long-term or family-plan users (Partner/Dependents), enabling segment-adjusted churn probability simulations
+<p align="center">
+  <img src="outputs/eda_01/time_series_churn.png" width=70%>
+</p>
 
-** Utility Trade-off: Ad Aversion vs. Substitution Threat**
+### Chart 2: Family vs Individual Churn Gap
+- Family: 16.3% churn, 51-month median tenure
+- Individual: 24.6% churn, 32-month median tenure
 
-- Research: Churn behavior may reflect a shifting balance between the perceived utility of an ad-free experience and the opportunity cost of switching to alternative services
-- Objective: By analyzing the relative search intensity of **Alternatives** versus **Ad-Free benefits** the simulator estimates potential tipping conditions where switching intent becomes more pronounced
+<p align="center">
+  <img src="outputs/eda_02/graph3_tenure_boxplot.png" width=70%>
+</p>
+
+### Chart 3: Price Elasticity Curve with Threshold
+- Inflection point at $75 tier (non-linear acceleration)
+- Simulation scenarios overlay:     
+    - +5%: 16.37 Rev Index
+    - +10%: 17.12 Rev Index
+    - +17%: 18.10 Rev Index (sweet spot)
+    - +28%: 19.55 Rev Index (threshold risk)
+
+<p align="center">
+  <img src="outputs/eda_03/graph2_line_chart.png" width=70%>
+</p>
+
+## Method Overview
+### Data
+- Telco subscription dataset (Kaggle) used as a behavioral proxy for YouTube Premium
+- 7,043 raw records → 5,534 cleaned observations
+- Structural similarity validated against **Pew Research YouTube usage patterns**
+
+### Validation Approach
+**1. H1 – Policy Shock**
+- Welch’s t-test comparing baseline (Jan–Aug) vs policy period (Sep–Jan)
+- July outlier removed using IQR method
+
+**2. H2 – Family Resilience**
+- Chi-square test of independence
+- Segmentation: Family vs Individual plans
+- Evaluated at Feb 2026 (6 months post-policy)
+
+**3. H3 – Price Threshold**
+- Chi-square test: price tier × churn
+- Sample restricted to 5+ month tenure customers
+- Elasticity curve estimated across price tiers
+
+**4. Simulation**
+- Four price scenarios tested **(+5%, +10%, +17%, +28%)**
+- Churn projections mapped onto observed elasticity curve
+
+**5. Limitations**
+- Proxy dataset → magnitude directional, trend reliable
+- Competitive reactions and product changes not modeled
+- Observation window: Jan 2025 – Jan 2026
+
+**6. Full proxy validation:** /report/data_proxy_validation.md
