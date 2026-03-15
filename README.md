@@ -3,7 +3,7 @@
 
 ## Executive Summary
 Executive Summary
-In September 2025, YouTube announced a Family Plan policy change (implemented October 1) that immediately triggered elevated customer churn. This project investigates whether the churn surge represents a valid market signal about customer segmentation and price elasticity in the remaining customer base, and determines whether a 2026 price increase is viable.
+In September 2025, YouTube announced a Family Plan policy change (implemented October 1) that immediately triggered elevated customer churn. This project investigates whether the churn surge represents a valid market signal about customer segmentation and price elasticity in the remaining customer base, and recommends an optimal price increase magnitude and timing.
 
 ### Finding
 - The analysis suggests that a price increase of about **+17%** could be viable based on three observed patterns in churn behavior.
@@ -63,15 +63,33 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 </p>
 
 ### Chart 3: Price Scenario Simulation Results
-- 17% price increase = optimal point (highest revenue efficiency with stable churn)
-- Churn spike occurs from 28% and above
-- Inflection point at $75 tier (non-linear acceleration)
-- Simulation scenarios overlay:     
-    - +5%: 16.37 Rev Index
-    - +10%: 17.12 Rev Index
-    - +17%: 18.10 Rev Index (sweet spot)
-    - +28%: 19.55 Rev Index (threshold risk)
-
+<table align="center" border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="padding: 10px; width: 50%;">Left Panel: Revenue Index</th>
+      <th style="padding: 10px; width: 50%;">Right Panel: Churn Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 10px; vertical-align: top;">
+        <ul>
+          <li><strong>Total Revenue:</strong> Trajectory across 4 scenarios.</li>
+          <li><strong>Family Revenue:</strong> Stable growth pattern.</li>
+          <li><strong>Individual Risk:</strong> Accelerating after +17%.</li>
+          <li><strong>Sweet Spot:</strong> Identified at +17% increase.</li>
+        </ul>
+      </td>
+      <td style="padding: 10px; vertical-align: top;">
+        <ul>
+          <li><strong>Family Churn:</strong> Remains resilient (blue bars).</li>
+          <li><strong>Individual Churn:</strong> Higher baseline sensitivity.</li>
+          <li><strong>Threshold:</strong> Churn spike visible at +28%.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 <p align="center">
   <img src="outputs/eda_03/graph4_simulation_dual.png">
 </p>
@@ -79,7 +97,7 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 ## Method Overview
 ### Data
 - Telco subscription dataset (Kaggle) used as a behavioral proxy for YouTube Premium
-- 7,043 raw records → 5,534 cleaned observations
+- 5,534 recirds with 21 features 
 - Structural similarity validated against **Pew Research YouTube usage patterns**
 
 ### Validation Approach
@@ -102,7 +120,7 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 - Churn projections mapped onto observed elasticity curve
 
 **5. Limitations**
-- Proxy dataset → magnitude directional, trend reliable
+- **Proxy dataset → magnitude directional, trend reliable**
 - Competitive reactions and product changes not modeled
 - Observation window: Jan 2025 – Jan 2026
 

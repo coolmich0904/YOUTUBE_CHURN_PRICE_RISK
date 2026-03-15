@@ -1,5 +1,5 @@
 Churn,Segment,Churn_Probability,Churn_Probability,Churn_Probability
 Price_tier,,Low,Medium,High
 0,Fresh (<3mo),43.3,72.37,86.67
-1,Inflection (3-5mo),32.54,55.74,69.81
-2,Pre-Inflection (5+mo),8.86,20.11,30.6
+1,Inflection (3-5mo),32.53,52.41,72.22
+2,Pre-Inflection (5+mo),8.17,19.4,30.06
