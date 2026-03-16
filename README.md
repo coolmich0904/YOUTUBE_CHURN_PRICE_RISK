@@ -1,5 +1,9 @@
 # Title: YouTube Churn Price Risk Assessment
-- Dashboard Images (updating)
+- Dashboard Images
+<p align="center">
+  <img src="outputs/powerBI/page1.png">
+  <img src="outputs/powerBI/page2.png">
+</p>
 
 ## Executive Summary
 Executive Summary
@@ -133,6 +137,28 @@ In September 2025, YouTube announced a Family Plan policy change (implemented Oc
 - Version Control: GitHub
 - Dashboard: Power BI
 
-## Strategic Implementation & Next Steps
+## Development & Analytical Workflow
+- This project was completed using an **AI-assisted development workflow** while I maintained **full ownership** of the analytical direction and business insights.
+
+#### 1. AI-Assisted Implementation 
+##### I leveraged AI tools (primarily Claude) to accelerate:
+- Exploratory brainstorming for statistical approaches
+- Python code generation, debugging, and optimization
+- Data visualization design and implementation
+- Documentation structuring and polishing
+
+#### 2.  Analyst-Led Decision Making
+##### All critical analytical decisions were driven by me, with AI as a supportive collaborator:
+- Defining the core business problem (customer churn and price elasticity)
+- Selecting and evaluating appropriate statistical methods
+- Verifying test assumptions and validating results
+- Interpreting findings and uncovering actionable insights
+- Translating analysis into clear business recommendations
+
+#### 3. Outcome
+- AI significantly sped up the technical implementation (coding, visualization, and documentation), allowing me to focus more deeply on analytical reasoning and strategic thinking. 
+- The entire process—from initial data exploration to final recommendations—took approximately three weeks.
+
+**This reflects my approach as a Junior Data Analyst using modern tools efficiently while taking full responsibility for the quality and integrity of the analysis.**
 
 ## 
