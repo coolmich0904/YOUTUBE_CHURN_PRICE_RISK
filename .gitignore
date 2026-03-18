@@ -1,0 +1,6 @@
+dashboard/
+report/
+.vscode/
+data/
+.ipynb_checkpoints/
+__pycache__/
