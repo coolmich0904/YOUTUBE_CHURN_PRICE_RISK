@@ -97,7 +97,7 @@ Four price scenarios (+5%, +10%, +17%, +28%) were applied based on observed chur
 
 ## Tech Stack
 
-`Python` `Pandas` `NumPy` `SciPy` `Matplotlib` `Seaborn` `Jupyter Notebook` `Power BI` `GitHub`
+`Python` `Pandas` `NumPy` `SciPy` `Matplotlib` `Seaborn` `Jupyter Notebook` `VS Code` `Power BI` `GitHub`
 
 ---
 
