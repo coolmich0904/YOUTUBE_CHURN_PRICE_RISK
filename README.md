@@ -109,4 +109,4 @@ This project was developed with the help of AI tools to improve efficiency durin
 - Outputs from AI were reviewed and adjusted before being used  
 - All analysis design, statistical validation, and interpretation were done by me  
 
-The goal was to use AI as a tool while keeping full responsibility for the analysis and conclusions.
+The goal was to use AI as a tool while keeping full responsibility for the analysis and conclusions
