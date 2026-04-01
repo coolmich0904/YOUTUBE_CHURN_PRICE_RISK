@@ -1,164 +1,112 @@
-# Title: YouTube Churn Price Risk Assessment
-- Dashboard Images
+# YouTube Churn Price Risk Assessment
+> Analyzing pricing scenarios to balance revenue growth and subscriber retention.
+
 <p align="center">
   <img src="outputs/powerBI/page1.png">
   <img src="outputs/powerBI/page2.png">
 </p>
 
-## Executive Summary
-Executive Summary
-In September 2025, YouTube announced a Family Plan policy change (implemented October 1) that immediately triggered elevated customer churn. This project investigates whether the churn surge represents a valid market signal about customer segmentation and price elasticity in the remaining customer base, and recommends an optimal price increase magnitude and timing.
+---
 
-### Finding
-- The analysis suggests that a price increase of about **+17%** could be viable based on three observed patterns in churn behavior.
-- Family plan subscribers show lower churn than individual users (16.3% vs 24.6%, χ² = 52.97, p < 0.001)
+## Overview
 
-<p align="center">
-  <img src="outputs/eda_03/graph1_grouped_bar.png">
-</p>
+In September 2025, YouTube's Family Plan policy change triggered an immediate churn surge. This project started from a simple question: was this spike just a temporary reaction, or does it reflect underlying price sensitivity across different customer segments?
 
-## Key Insights Summary
-<table align="center">
-  <thead>
-    <tr>
-      <th>Insight</th>
-      <th>Evidence</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Policy change caused abnormal churn</td>
-      <td>6.29 → 36.65 churn/month</td>
-    </tr>
-    <tr>
-      <td>Family users are structurally more resilient</td>
-      <td>16.3% vs 24.6% churn</td>
-    </tr>
-    <tr>
-      <td>Price elasticity threshold occurs near $75</td>
-      <td>Churn accelerates beyond this point</td>
-    </tr>
-  </tbody>
-</table>
+To explore this, I analyzed how churn behavior changes under different pricing scenarios and how far pricing can be adjusted without triggering excessive retention loss.
 
-<table align="center" border="0">
-  <tr>
-    <td><img src="outputs/eda_02/graph2_waffle.png" ></td>
-    <td><img src="outputs/eda_03/graph2_line_chart.png"></td>
-    <td><img src="outputs/eda_03/graph1_grouped_bar.png" ></td>
-  </tr>
-</table>
+The analysis suggests that a +17% price increase provides a reasonable balance between revenue growth and churn risk.
 
-## Key Visualization
-### Chart 1: Time -Series Churn with Policy Inflection
-- Policy change triggered a sharp churn increase.
-- Monthly churn rose from 6.29 → 36.65 after the policy announcement.
+---
+
+## Key Findings
+
+| Insight | Evidence |
+|---|---|
+| Policy change caused abnormal churn | 6.29 → 36.65 churn/month |
+| Family users are structurally more resilient | 16.3% vs 24.6% churn rate |
+| Price elasticity threshold occurs near $75 | Churn accelerates beyond this point |
+
+- A **+17% price increase** shows a balanced outcome — revenue increases without a sharp rise in churn  
+- A **+28% price increase** leads to a clear churn increase, especially among Individual plan users  
+- Family plan subscribers show lower churn than Individual users (**χ² = 52.97, p = 3.95e-53**)
+
+---
+
+## Visualizations
+
+### Chart 1: Time-Series Churn with Policy Inflection
+Monthly churn rose from **6.29 → 36.65** following the policy announcement.
 
 <p align="center">
   <img src="outputs/eda_01/time_series_churn.png">
 </p>
 
+---
+
 ### Chart 2: Family vs Individual Churn Gap
-- Family: 16.3% churn, 51-month median tenure
-- Individual: 24.6% churn, 32-month median tenure
+- Family: 16.3% churn, 51-month median tenure  
+- Individual: 24.6% churn, 32-month median tenure  
 
 <p align="center">
   <img src="outputs/eda_02/graph3_tenure_boxplot.png">
 </p>
 
+---
+
 ### Chart 3: Price Scenario Simulation Results
-<table align="center" border="1" style="border-collapse: collapse; width: 100%;">
-  <thead>
-    <tr style="background-color: #f2f2f2;">
-      <th style="padding: 10px; width: 50%;">Left Panel: Revenue Index</th>
-      <th style="padding: 10px; width: 50%;">Right Panel: Churn Rate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 10px; vertical-align: top;">
-        <ul>
-          <li><strong>Total Revenue:</strong> Trajectory across 4 scenarios.</li>
-          <li><strong>Family Revenue:</strong> Stable growth pattern.</li>
-          <li><strong>Individual Risk:</strong> Accelerating after +17%.</li>
-          <li><strong>Sweet Spot:</strong> Identified at +17% increase.</li>
-        </ul>
-      </td>
-      <td style="padding: 10px; vertical-align: top;">
-        <ul>
-          <li><strong>Family Churn:</strong> Remains resilient (blue bars).</li>
-          <li><strong>Individual Churn:</strong> Higher baseline sensitivity.</li>
-          <li><strong>Threshold:</strong> Churn spike visible at +28%.</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+Four scenarios tested: +5%, +10%, +17%, +28%
+
 <p align="center">
   <img src="outputs/eda_03/graph4_simulation_dual.png">
 </p>
 
-## Method Overview
+→ Revenue increases with price, but churn rises more sharply beyond +17%, particularly for Individual users.
+
+---
+
+## Methodology
+
 ### Data
-- Telco subscription dataset (Kaggle) used as a behavioral proxy for YouTube Premium
-- 5,534 recirds with 21 features 
-- Structural similarity validated against **Pew Research YouTube usage patterns**
+- Telco subscription dataset (Kaggle) used as a behavioral proxy for YouTube Premium  
+- **5,534 records (cleaned dataset)** with 21 features  
+- Structural similarity checked against Pew Research YouTube usage patterns  
 
 ### Validation Approach
-**1. H1 – Policy Shock**
-- Welch’s t-test comparing baseline (Jan–Aug) vs policy period (Sep–Jan)
-- July outlier removed using IQR method
 
-**2. H2 – Family Resilience**
-- Chi-square test of independence
-- Segmentation: Family vs Individual plans
-- Evaluated at Feb 2026 (6 months post-policy)
+**H1 – Policy Shock**  
+Welch's t-test comparing baseline (Jan–Aug) vs policy period (Sep–Jan). July outlier removed using IQR method.
 
-**3. H3 – Price Threshold**
-- Chi-square test: price tier × churn
-- Sample restricted to 5+ month tenure customers
-- Elasticity curve estimated across price tiers
+**H2 – Family Resilience**  
+Chi-square test of independence, segmented by Family vs Individual plans, evaluated at 6 months post-policy.
 
-**4. Simulation**
-- Four price scenarios tested **(+5%, +10%, +17%, +28%)**
-- Churn projections mapped onto observed elasticity curve
+**H3 – Price Threshold**  
+Chi-square test: price tier × churn. Sample restricted to 5+ month tenure customers.  
+Elasticity curve estimated across price tiers.
 
-**5. Limitations**
-- **Proxy dataset → magnitude directional, trend reliable**
-- Competitive reactions and product changes not modeled
-- Observation window: Jan 2025 – Jan 2026
+**Simulation**  
+Four price scenarios (+5%, +10%, +17%, +28%) were applied based on observed churn patterns.
 
-**6. Full proxy validation:** /report/data_proxy_validation.md
+**Limitations**
+- Proxy dataset — directionally useful but not exact  
+- Competitive reactions and product changes not included  
+- Observation window: Jan 2025 – Jan 2026  
+
+📄 Full proxy validation: `/report/data_proxy_validation.md`
+
+---
 
 ## Tech Stack
-- Python (Pandas, NumPy, SciPy)
-- Visualization: Matplotlib, Seaborn
-- Environment: Jupyter Notebook, VS Code
-- Version Control: GitHub
-- Dashboard: Power BI
 
-## Development & Analytical Workflow
-- This project was completed using an **AI-assisted development workflow** while I maintained **full ownership** of the analytical direction and business insights.
+`Python` `Pandas` `NumPy` `SciPy` `Matplotlib` `Seaborn` `Jupyter Notebook` `Power BI` `GitHub`
 
-#### 1. AI-Assisted Implementation 
-##### I leveraged AI tools (primarily Claude) to accelerate:
-- Exploratory brainstorming for statistical approaches
-- Python code generation, debugging, and optimization
-- Data visualization design and implementation
-- Documentation structuring and polishing
+---
 
-#### 2.  Analyst-Led Decision Making
-##### All critical analytical decisions were driven by me, with AI as a supportive collaborator:
-- Defining the core business problem (customer churn and price elasticity)
-- Selecting and evaluating appropriate statistical methods
-- Verifying test assumptions and validating results
-- Interpreting findings and uncovering actionable insights
-- Translating analysis into clear business recommendations
+## AI-Assisted Development
 
-#### 3. Outcome
-- AI significantly sped up the technical implementation (coding, visualization, and documentation), allowing me to focus more deeply on analytical reasoning and strategic thinking. 
-- The entire process—from initial data exploration to final recommendations—took approximately three weeks.
+This project was developed with the help of AI tools to improve efficiency during implementation.
 
-**This reflects my approach as a Junior Data Analyst using modern tools efficiently while taking full responsibility for the quality and integrity of the analysis.**
+- AI was used to support code generation, debugging, and visualization setup  
+- Outputs from AI were reviewed and adjusted before being used  
+- All analysis design, statistical validation, and interpretation were done by me  
 
-## 
+The goal was to use AI as a tool while keeping full responsibility for the analysis and conclusions.
