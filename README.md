@@ -20,6 +20,11 @@ The analysis suggests that a +17% price increase provides a reasonable balance b
 
 Data validation and quality checks were performed prior to analysis to ensure accuracy and reliability of results.
 
+### Data Validation & Quality Checks
+
+- Verified dataset consistency and handled missing or inconsistent values  
+- Performed cross-checks on churn rate, tenure, and pricing variables  
+- Ensured data integrity before statistical analysis
 ---
 
 ## Key Findings
