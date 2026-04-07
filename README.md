@@ -1,5 +1,6 @@
 # YouTube Churn Price Risk Assessment
-> Analyzing pricing scenarios to balance revenue growth and subscriber retention.
+> This project analyzes pricing scenarios for YouTube Premium and validates data consistency to identify churn risk and optimal pricing strategy.
+> Data Validation & Quality Checks
 
 <p align="center">
   <img src="outputs/powerBI/page1.png">
