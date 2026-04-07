@@ -1,6 +1,6 @@
 # YouTube Churn Price Risk Assessment
 > This project analyzes pricing scenarios for YouTube Premium and validates data consistency to identify churn risk and optimal pricing strategy.
-> Data Validation & Quality Checks
+> 
 > 
 
 <p align="center">
@@ -17,6 +17,8 @@ In September 2025, YouTube's Family Plan policy change triggered an immediate ch
 To explore this, I analyzed how churn behavior changes under different pricing scenarios and how far pricing can be adjusted without triggering excessive retention loss.
 
 The analysis suggests that a +17% price increase provides a reasonable balance between revenue growth and churn risk.
+
+Data validation and quality checks were performed prior to analysis to ensure accuracy and reliability of results.
 
 ---
 
