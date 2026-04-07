@@ -74,17 +74,17 @@ Four scenarios tested: +5%, +10%, +17%, +28%
 ### Validation Approach
 
 **H1 – Policy Shock**  
-Welch's t-test comparing baseline (Jan–Aug) vs policy period (Sep–Jan). July outlier removed using IQR method.
+Welch's t-test comparing baseline (Jan–Aug) vs policy period (Sep–Jan). July outlier removed using IQR method
 
 **H2 – Family Resilience**  
-Chi-square test of independence, segmented by Family vs Individual plans, evaluated at 6 months post-policy.
+Chi-square test of independence, segmented by Family vs Individual plans, evaluated at 6 months post-policy
 
 **H3 – Price Threshold**  
-Chi-square test: price tier × churn. Sample restricted to 5+ month tenure customers.  
+Chi-square test: price tier × churn. Sample restricted to 5+ month tenure customers  
 Elasticity curve estimated across price tiers.
 
 **Simulation**  
-Four price scenarios (+5%, +10%, +17%, +28%) were applied based on observed churn patterns.
+Four price scenarios (+5%, +10%, +17%, +28%) were applied based on observed churn patterns
 
 **Limitations**
 - Proxy dataset — directionally useful but not exact  
@@ -103,7 +103,7 @@ Four price scenarios (+5%, +10%, +17%, +28%) were applied based on observed chur
 
 ## AI-Assisted Development
 
-This project was developed with the help of AI tools to improve efficiency during implementation.
+This project was developed with the help of AI tools to improve efficiency during implementation
 
 - AI was used to support code generation, debugging, and visualization setup  
 - Outputs from AI were reviewed and adjusted before being used  
