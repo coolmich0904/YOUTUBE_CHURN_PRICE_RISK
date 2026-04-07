@@ -24,7 +24,7 @@ Data validation and quality checks were performed prior to analysis to ensure ac
 
 - Verified dataset consistency and handled missing or inconsistent values  
 - Performed cross-checks on churn rate, tenure, and pricing variables  
-- Ensured data integrity before statistical analysis
+- Ensured data integrity before statistical analysis to support reliable and accurate results
 ---
 
 ## Key Findings
